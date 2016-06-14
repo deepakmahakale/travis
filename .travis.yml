@@ -10,6 +10,10 @@ script: 'bundle exec rspec'
 
 cache: bundler
 
+branches:
+  only:
+    - master
+
 notifications:
   recipients:
     - deepakmahakale@gmail.com
