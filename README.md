@@ -1,5 +1,4 @@
-Travis Demo
-===========
+# Travis Demo [![Build Status](https://travis-ci.org/deepakmahakale/travis-demo.svg?branch=master)](https://travis-ci.org/deepakmahakale/travis-demo)
 
 ### [Get started with Travis CI](https://docs.travis-ci.com/user/getting-started/):
 
