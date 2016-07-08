@@ -28,3 +28,5 @@
 5. Check the build status page to see if your build passes or fails.
 
 You probably need to [customize your build](https://docs.travis-ci.com/user/customizing-the-build) by [installing dependencies](https://docs.travis-ci.com/user/installing-dependencies) or [setting up a Database](https://docs.travis-ci.com/user/database-setup/. Or maybe you just want more information about the [test environment](https://docs.travis-ci.com/user/ci-environment/)?
+
+[//]: # (Adding this comment to test [ci:skip])
