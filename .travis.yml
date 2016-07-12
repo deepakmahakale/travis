@@ -1,15 +1,18 @@
 language: ruby
 rvm:
-  - 2.2.4
-
+- 2.2.0
 before_script:
-  - cp config/database.yml.example config/database.yml
-  - RAILS_ENV=test bundle exec rake db:migrate
-
-script: 'bundle exec rspec'
-
+- cp config/database.yml.example config/database.yml
+- RAILS_ENV=test bundle exec rake db:migrate
 cache: bundler
-
 notifications:
-  recipients:
+  email:
+    recipients:
     - deepakmahakale@gmail.com
+    - deepak@weboapps.com
+    - travis.demo@weboapps.com
+    on_success: always
+  slack:
+    rooms:
+    - secure: N9CrvTPRgYdfu69CYt+SOSzOGasoH/rGsvlggvvlnGmvauu/XnK0V1BrA3RSh/DBnkjhJp26QgxeBZW/490mkCwA18yM7BNovudlGqHvJS38wUx5WkxlMyx5GUHPLpuml+q6nd+tt0DbWeifrcWG3mYmF8xnrF2hDWv12R48XcrPlr0GzvWmpJ0NPR4ndnDAleeJxoWFmPOWOg54gUUlMEV2VkeMGKrZocFiurFzLRGIFAqDFttWMudmOIRXjmywDM1Y3tXM/rByhjir1K/IJMc8429+bcf6C9aq0zNM/ED10zwFqiZNE7pj8cGZPSGvPON49aKHxL7CMkYMIoDWAXH+u/DGHqiPdr55OpazMQKKOpxqJ3x/Yl6DNkzs7uGyvqC2X/IJQXKn50trwLLYxG4ZVu//Pg0+aJDTTE1e6hvwPdv4DE017fD9X/+FjfxEz/UdlDJsQZHa246Sh22kLStVdpNyc1OrjuCqsMk+6KVRwNKAMxyOdB1pG8etCIQ7XdjsQJw6MFRdWO6AjauANnK6o1TtIfeZvGmvC48lGZ/F33vSNM1yZi5QVfgZwak+jCaIFSJcVA5y26a5C8msNjJ+nr5ZE0bsTrGmaLP+ZWODBlbD8tSgnWik5S+33yf4GXrFI7+M+cUKYm7EDlQnK0ETnX2ELFK/oAAh0HMiSTU=
+    - secure: d/Ar0+M9MRme1qNdPbx826xQuepsEALoK8r7eDbOMHk101mEkKYbpEPuzVmNKsJai4NogDjYlho9wzCeRJZXkn5U5cAZ7TOVNSIl1/IpKXk2nEzuMkwSA8ejm0IHaxinn7kUhAgkl+sNO+NBzgsR0mKDTycUllJL5P2yjNbvC/BmeqPBr8A/chqygu1RhM5lrP3BnROxH9mEEK6qX4faTNOn/6emITQefb0WloO4RJZH4+FmCQK8my29s6isOd31k+oS+7kW8Tp/MyF68Undxpd6F3EvjXZFPsfb6FvSVJCUJOgn+LuEMVvLEDg08gRp8APpPtGiawWQX3Iib611A6J2Dp4CPz0/43pBBe3tljp9mphsLxfs2o3Ml6b6NEHtk5IjPSCWnIm0uFSael8AsXMpiLKU18OaVc93DF1B2TfcXkLLJLiPhDca5H8vfdCombsrGFEvUp3Q6xk7PKkaPkZ279275CuD09X4B4f1zDIhY9RGG7Bd40t3OxiRMP1R3pj20cIFJeAX3rTPhPJ9iqFke+EWY0JkkKDJ0t+yy1vaOoT0PKXpfkQxr4myWa/VXcneQ7d8kerc706P54E5RmaWJ7UK01qRLtOiSyMRW6q85SZThL6muwI3D08SxYaZnatzCpmo4mCr+ht9o5ewQgA6C30A9glxCZ78Z6eTgwM=
