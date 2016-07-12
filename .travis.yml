@@ -1,15 +1,15 @@
 language: ruby
 rvm:
-  - 2.2.4
-
+  - 2.2.0
 before_script:
   - cp config/database.yml.example config/database.yml
   - RAILS_ENV=test bundle exec rake db:migrate
-
-script: 'bundle exec rspec'
-
 cache: bundler
-
-notifications:
-  recipients:
-    - deepakmahakale@gmail.com
+bundler_args: --without production development
+deploy:
+  provider: heroku
+  api_key:
+    secure: KeJQ7AIpZd2B+azdLosyMqNhW6hEFaqvmpB6HQIbv2zUyw/d1fYfM6bPvuua5vrPm6twf5CWyYpktuY0Jz81JDx+2z76k4z9ECV2LeK0P3q0Q3PYMDckAwl++xH+6UJ+9J/NtWIOXLyr9u3ZSO3BvbGQqTDtSvLK1UwVJAScp3BFXzEpTKEIYpGZ2Aqxyu4zzX01TkcfX+aPHjgSW3Y1UEDEIzs+hx6RWh9TGlYKKuYflHxCBicZALLUDpdenU+6irZ3unXZJcFhaZdGxRGEHWdJvYEeyZJEe6Vi1yjxIFFQ0NmyUoTAWGgZzu3nLmmT4N9jAuKtFg5pw0IrXMzlVK8YuiIXNJtQor+b8tuRHRfBJpudE9zQx0VOu8fLOO44zWPDsjGRuxddSGxjLrK0sEOljx8JeFHiRa/2TIySaWp6C0OW2uetqW8PGB3u4KgHrH6ujTWtJMThaIKDNDm8RVq1RSyC5hzxn7Ro1aBAQ1S4LuTAeHDbzsb+k6IxpDEmdChbOFpFEDsm+OAv3LW1g59h7TQgWyBQhPcO6ex5Kfin2zYk4QirGgnvA3/cH+kgIBcRU+YmTXZ+PbgdB/kj8fJ8L7DJeBAgurIRjY4C8Zx5B6A5KX515HDhw5DCtQOLlBp/bOfSN9aZTrAMQr8H5uGbDbQJPh3nqSGIfxvxnrw=
+  app:
+    heroku-deploy: travisci-demo
+  skip_cleanup: true
