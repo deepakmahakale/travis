@@ -20,5 +20,4 @@ jobs:
       run: |
         gem install bundler
         bundle install --jobs 4 --retry 3
-        RAILS_ENV=test bundle exec rake db:migrate
-        bundle exec rspec
+        bundle exec rake
