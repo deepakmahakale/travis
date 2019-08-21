@@ -13,12 +13,12 @@ jobs:
       uses: actions/setup-ruby@v1
       with:
         ruby-version: 2.6.x
-    - name: Setup the Database
+    - name: Copy the database config
       run: |
         cp config/database.yml.example config/database.yml
-        RAILS_ENV=test bundle exec rake db:migrate
     - name: Build and test with Rspec
       run: |
         gem install bundler
         bundle install --jobs 4 --retry 3
+        RAILS_ENV=test bundle exec rake db:migrate
         bundle exec rspec
