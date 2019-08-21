@@ -19,5 +19,5 @@ jobs:
     - name: Build and test with Rspec
       run: |
         gem install bundler
-        bundle install --jobs 4 --retry 3
+        bundle install --jobs 4 --retry 3 --path vendor/cache
         bundle exec rake
